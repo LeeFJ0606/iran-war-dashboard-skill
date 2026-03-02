@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>伊朗战争看板 · 多角色态势模拟</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="brand">
+        <div class="logo">IR</div>
+        <div class="titles">
+          <h1>伊朗战争看板</h1>
+          <p>多角色对同一新闻的观点与行动推演</p>
+        </div>
+      </div>
+      <div class="actions">
+        <button id="exportJson" class="secondary">导出JSON</button>
+        <button id="copyAll" class="secondary">复制全部</button>
+        <a id="reset" class="link">重置</a>
+      </div>
+    </header>
+
+    <section class="input-section">
+      <div class="input-row">
+        <input id="newsUrl" type="url" placeholder="粘贴新闻链接，例如：https://baijiahao.baidu.com/s?id=1858457899240027301">
+        <button id="analyzeBtn" class="primary">分析</button>
+      </div>
+      <div class="tips">
+        <div>输入为新闻链接，输出为19个角色的观点与下一步措施。</div>
+        <div class="tip-mini">跨域通过只读代理抓取公开页面文本。</div>
+      </div>
+    </section>
+
+    <section id="summary" class="summary hidden">
+      <div class="summary-card">
+        <div class="summary-title">事件要点摘要</div>
+        <div id="summaryText" class="summary-text"></div>
+      </div>
+      <div class="filters">
+        <div class="filter-title">角色分组筛选</div>
+        <div class="filter-grid" id="filterGrid"></div>
+      </div>
+    </section>
+
+    <section id="results" class="results">
+      <div id="roleGrid" class="role-grid"></div>
+    </section>
+
+    <footer class="footer">
+      <div>此页面为策略模拟，非事实陈述。请结合更多信息综合研判。</div>
+    </footer>
+  </div>
+  <script src="./assets/app.js"></script>
+</body>
+<style>
+</style>
+</html>

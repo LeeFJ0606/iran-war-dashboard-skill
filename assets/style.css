@@ -1,0 +1,59 @@
+:root {
+  --bg: #0b0f17;
+  --panel: #121826;
+  --panel-2: #1b2334;
+  --text: #e6e9ef;
+  --muted: #9aa3b2;
+  --primary: #5b8def;
+  --primary-2: #406cd6;
+  --accent: #39c5bb;
+  --danger: #ff6b6b;
+  --ok: #7bd88f;
+  --border: #243048;
+  --card: #0f1420;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; background: var(--bg); color: var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",sans-serif; }
+.page { max-width: 1200px; margin: 0 auto; padding: 24px; }
+.header { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+.brand { display: flex; align-items: center; gap: 14px; }
+.logo { width: 40px; height: 40px; display: grid; place-items: center; background: linear-gradient(145deg, var(--primary), var(--accent)); color: white; font-weight: 700; border-radius: 12px; }
+.titles h1 { margin: 0; font-size: 22px; font-weight: 700; }
+.titles p { margin: 2px 0 0; font-size: 13px; color: var(--muted); }
+.actions { display: flex; gap: 8px; align-items: center; }
+.primary, .secondary, .link { border: 0; border-radius: 10px; padding: 10px 14px; font-weight: 600; cursor: pointer; }
+.primary { background: var(--primary); color: white; }
+.primary:hover { background: var(--primary-2); }
+.secondary { background: var(--panel); color: var(--text); }
+.secondary:hover { background: var(--panel-2); }
+.link { background: transparent; color: var(--muted); text-decoration: underline; padding: 0; }
+.input-section { background: var(--panel); border: 1px solid var(--border); border-radius: 16px; padding: 16px; display: grid; gap: 10px; }
+.input-row { display: grid; grid-template-columns: 1fr auto; gap: 10px; }
+#newsUrl { width: 100%; background: var(--card); border: 1px solid var(--border); border-radius: 12px; color: var(--text); padding: 12px 14px; outline: none; font-size: 14px; }
+.tips { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); }
+.summary { display: grid; grid-template-columns: 2fr 1fr; gap: 12px; margin-top: 16px; }
+.summary.hidden { display: none; }
+.summary-card { background: var(--panel); border: 1px solid var(--border); border-radius: 16px; padding: 14px; }
+.summary-title { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+.summary-text { color: var(--text); font-size: 13px; line-height: 1.6; white-space: pre-wrap; }
+.filters { background: var(--panel); border: 1px solid var(--border); border-radius: 16px; padding: 14px; }
+.filter-title { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+.filter-grid { display: grid; grid-template-columns: 1fr; gap: 8px; }
+.filter-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
+.results { margin-top: 16px; }
+.role-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.role-card { background: var(--panel); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: grid; grid-template-rows: auto auto 1fr; }
+.role-head { padding: 12px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); }
+.role-name { font-weight: 700; font-size: 14px; }
+.role-group { font-size: 12px; color: var(--muted); }
+.role-body { padding: 12px; display: grid; gap: 8px; }
+.role-section-title { font-weight: 600; font-size: 13px; color: var(--accent); }
+.role-text { font-size: 13px; color: var(--text); line-height: 1.6; white-space: pre-wrap; }
+.role-footer { padding: 10px 12px; border-top: 1px solid var(--border); display: flex; gap: 8px; }
+.tag { font-size: 12px; color: var(--muted); background: var(--card); border: 1px solid var(--border); border-radius: 999px; padding: 4px 8px; }
+.footer { margin-top: 20px; color: var(--muted); font-size: 12px; text-align: center; }
+.loading { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 13px; }
+.spinner { width: 14px; height: 14px; border: 2px solid var(--border); border-top-color: var(--primary); border-radius: 999px; animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (max-width: 1000px) { .role-grid { grid-template-columns: repeat(2, 1fr); } .summary { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .role-grid { grid-template-columns: 1fr; } .header { flex-direction: column; align-items: flex-start; gap: 8px; } .actions { align-self: stretch; } }
